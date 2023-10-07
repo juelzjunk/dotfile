@@ -1,9 +1,9 @@
 cd ..
-cd Suckless/
+cd junkless/
 cd dmenu
 sudo make clean install
 cd ..
-cd junk-dwm
+cd dwm
 sudo make clean install
 cd ..
 cd slock

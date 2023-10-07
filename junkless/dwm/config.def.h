@@ -75,7 +75,7 @@ static const char *mutevol[]    = { "/usr/bin/pactl",   "set-sink-mute",   "0", 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask, 		XK_l, 	   spawn, 	   {.v = lockcmd } },
-	{ MODKEY|ShiftMask, 		XK_b, 	   spawn, 	   {.v = BRAVE } },
+	{ MODKEY|ShiftMask, 		XK_w, 	   spawn, 	   {.v = BRAVE } },
 	{ MODKEY|ShiftMask, 		XK_k, 	   spawn, 	   {.v = KEEPASS } },
 	{ 0,                       	XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       	XF86XK_AudioMute, spawn,   {.v = mutevol } },

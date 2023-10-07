@@ -19,10 +19,10 @@ sudo apt install -y thunar keepassxc
 
 # Network File Tools/System Events
 sudo apt install -y ufw dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager
-#sudo apt install -y tlp
+sudo apt install -y tlp
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
-#sudo systemctl enable tlp
+sudo systemctl enable tlp
 sudo systemctl enable ufw
 
 # Terminal (eg. terminator,kitty)
@@ -47,7 +47,7 @@ sudo apt install -y nitrogen
 sudo apt install -y unzip mlocate exa tldr fzf bat
 
 # Command line text editor -- nano preinstalled  
-sudo apt install -y neovim
+#sudo apt install -y neovim
 
 # Install fonts
 sudo apt install fonts-font-awesome fonts-ubuntu-title fonts-liberation2 fonts-liberation fonts-terminus 
