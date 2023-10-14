@@ -47,45 +47,10 @@ end,
     {"lewis6991/gitsigns.nvim"},
 
 -- LSP 
-    { "williamboman/mason.nvim",
-        opts = {
-          ensure_installed = {
-                "clangd",
-                "clang-format",
-                "codelldb",
-            }
-
-        }
-    },
-    {"williamboman/mason-lspconfig.nvim"},
-    {"mfussenegger/nvim-dap"},    
-    {"jay-babu/mason-nvim-dap.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            "williamboman/mason.nvim",
-            "mfussenegger/nvim-dap",
-        },
-        opts = {
-            handlers = {}
-        },
-    },
-
-    {"rcarriga/nvim-dap-ui",
-        event = "VeryLazy",
-     dependencies = {
-        "mfussenegger/nvim-dap",
-      config = function()
-          require("nvim-dap-ui").setup{}
-      end,
-    },
-    
-    {"neovim/nvim-lspconfig",
-        config = function()
-            require'lspconfig'.clangd.setup{}
-            -- require'lspconfig'.Lua.setup{}
-        end,
-    },
-   -- {"folke/neodev.nvim"},
+    -- { "williamboman/mason.nvim"},
+    -- {"williamboman/mason-lspconfig.nvim"},
+    -- {"neovim/nvim-lspconfig"},
+    -- {"folke/neodev.nvim"},
 -- CMP
     { "hrsh7th/cmp-path"},
     { "hrsh7th/cmp-buffer"},
@@ -109,5 +74,4 @@ end,
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 -- Auto Pairs
     {"windwp/nvim-autopairs"},
-}
 }
