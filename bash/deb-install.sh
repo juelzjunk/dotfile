@@ -35,7 +35,7 @@ sudo apt install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa
 sudo apt install -y neofetch htop
 
 # Browser Installation (eg. chromium)
-sudo apt install -y firefox-esr librewolf
+sudo apt install -y firefox-esr
 
 # Desktop background browser/handler 
 # feh --bg-fill /path/to/directory 
@@ -48,12 +48,50 @@ sudo apt install -y unzip aircrack-ng mlocate exa tldr fzf nmap bat
 
 # Command line text editor -- nano preinstalled  
 #sudo apt install -y neovim
+git clone https://github.com/neovim/neovim
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 
 # Install fonts
 sudo apt install fonts-font-awesome fonts-ubuntu-title fonts-liberation2 fonts-liberation fonts-terminus 
 
-# Create folders in user directory (eg. Documents,Downloads,etc.)
-xdg-user-dirs-update
-
 # Clean apt
 sudo apt auto remove
+
+#librewolf
+sudo apt update && sudo apt install -y wget gnupg lsb-release apt-transport-https ca-certificates
+
+distro=$(if echo " una bookworm vanessa focal jammy bullseye vera uma " | grep -q " $(lsb_release -sc) "; then lsb_release -sc; else echo focal; fi)
+
+wget -O- https://deb.librewolf.net/keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/librewolf.gpg
+
+sudo tee /etc/apt/sources.list.d/librewolf.sources << EOF > /dev/null
+Types: deb
+URIs: https://deb.librewolf.net
+Suites: $distro
+Components: main
+Architectures: amd64
+Signed-By: /usr/share/keyrings/librewolf.gpg
+EOF
+
+sudo apt update
+
+sudo apt install librewolf -y
+
+#picom
+
+# Install needed packages
+sudo apt install -y libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev libxext-dev meson ninja-build uthash-dev
+
+# Clone repo
+git clone https://github.com/yshui/picom.git
+cd picom
+
+# Build and Install picom
+meson setup --buildtype=release build
+sudo ninja -C build
+sudo ninja -C build install
+echo "cp ~/junk/dotfile/picom.conf ~/.config/picom/picom.conf && sudo reboot"
+
+# Create folders in user directory (eg. Documents,Downloads,etc.)
+echo "xdg-user-dirs-update"
