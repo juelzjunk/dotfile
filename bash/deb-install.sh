@@ -19,13 +19,13 @@ sudo apt install -y thunar keepassxc
 
 # Network File Tools/System Events
 sudo apt install -y ufw dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager
-sudo apt install -y tlp
+# sudo apt install -y tlp
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
-sudo systemctl enable tlp
+# sudo systemctl enable tlp
 sudo systemctl enable ufw
 
-# Terminal (eg. terminator,kitty)
+# Terminal (eg. terminator)
 sudo apt install -y alacritty
 
 # Sound packages
@@ -35,7 +35,7 @@ sudo apt install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa
 sudo apt install -y neofetch htop
 
 # Browser Installation (eg. chromium)
-sudo apt install -y firefox-esr 
+sudo apt install -y firefox-esr librewolf
 
 # Desktop background browser/handler 
 # feh --bg-fill /path/to/directory 

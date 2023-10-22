@@ -10,4 +10,4 @@ cd picom
 meson setup --buildtype=release build
 sudo ninja -C build
 sudo ninja -C build install
-echo "cp ~/junkSuckless/dotfile/picom.conf ~/.config/picom/picom.conf && sudo reboot"
+echo "cp ~/junk/dotfile/picom.conf ~/.config/picom/picom.conf && sudo reboot"
