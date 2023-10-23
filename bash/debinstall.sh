@@ -123,6 +123,6 @@ mv ~/junk/dotfile/bash_profile ~/.bash_profile
 mv ~/junk/dotfile/xinitrc ~/.xinitrc
 mv ~/junk/dotfile/picom.conf ~/.config/picom/picom.conf
 
-
+echo "yerrrrr"
 echo "cp ~/junk/dotfile/picom.conf ~/.config/picom/picom.conf && sudo reboot"
 echo "xdg-user-dirs-update>download nerdfonts to .local/share/fonts"
