@@ -44,7 +44,7 @@ sudo apt install -y firefox-esr
 sudo apt install -y nitrogen 
 
 # Packages needed dwm after installation
-sudo apt install -y unzip aircrack-ng mlocate exa tldr fzf nmap bat
+sudo apt install -y unzip aircrack-ng mlocate exa tldr fzf nmap bat speedtest-cli
 
 # Command line text editor -- nano preinstalled  
 #sudo apt install -y neovim
